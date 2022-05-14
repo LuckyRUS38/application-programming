@@ -1,7 +1,0 @@
-token = '5319312272:AAGpDpo0D_mM2k9JIwYr-TETgQU6L4jWs9Q'
-API_KEY = "67c56251ee16702602cf14ab9f65a802"
-
-UNITS = 'metric'
-MODE = 'json'
-LANG = 'ru'
-CNT = 10
