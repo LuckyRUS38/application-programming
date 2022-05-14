@@ -27,4 +27,9 @@ def get_cat(message):
     bot.send_photo(message.chat.id, photo=open(directories[command] + '/' + file_name, 'rb'))
 
 
+#Забираем локацию
+@bot.message_handler(content_types=['location'])
+def handle_location(message):
+    bot.send_message(message.chat.id, 'Теперь я знаю, где ты находишься 😝! Твои координаты: %s %s' % (message.location.longitude, message.location.latitude))
+
 bot.infinity_polling()
