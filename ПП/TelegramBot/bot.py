@@ -39,6 +39,7 @@ def generate_keyboards():
     key1 = telebot.types.KeyboardButton('Назад ↩️')
     any_cat_keyboard.row(key1)
 
+
 def send_cat(message, cat_color):
     users[message.chat.id] = 'cat_choice_menu'
     directories = {'white_cat': 'images/white_cats', 'orange_cat': 'images/orange_cats', 'black_cat': 'images/black_cats'}
@@ -137,6 +138,7 @@ def handle_text(message):
         return
 
     bot.send_message(message.chat.id, 'Я вас не понял, попробуйте ещё раз', reply_markup=keyboards[users[message.chat.id]])
+
 
 generate_keyboards()
 bot.infinity_polling()
