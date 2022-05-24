@@ -11,12 +11,6 @@ def get_con():
     )
     return con
 
-# with con:
-#     sql = "SELECT `id`, `telegram_id`, `step`, `pictures` FROM `users`;"
-#     cur = con.cursor()
-#     cur.execute(sql)
-#     print(cur.fetchall())
-
 
 def get_user_step(telegram_id):
     con = get_con()

@@ -1,7 +1,13 @@
+# Tokens and API KEYS
 token = ''
-API_KEY = ""
+API_KEY = ''
 
-UNITS = 'metric'
+# Database cfg data
+sql_host = ''
+sql_user = ''
+sql_pass = ''
+sql_name = ''
+
+# OpenWeather cfg for Bot
 MODE = 'json'
 LANG = 'ru'
-CNT = 10
