@@ -23,8 +23,10 @@ def generate_keyboards():
     key2 = telebot.types.KeyboardButton('Выбор котика')
     key3 = telebot.types.KeyboardButton('Помощь')
     key4 = telebot.types.KeyboardButton('Поменять имя')
+    key5 = telebot.types.KeyboardButton('Добавить фото')
     main_keyboard.row(key1, key2)
     main_keyboard.row(key3, key4)
+    main_keyboard.row(key5)
 
     global cat_choice_keyboard
     cat_choice_keyboard = telebot.types.ReplyKeyboardMarkup()
@@ -80,81 +82,123 @@ def handle_location(message):
         message.location.longitude, message.location.latitude))
 
 
+@bot.message_handler(content_types=['photo'])
+def handle_image(message):
+    colors = {'upload_photo_w': 'white', 'upload_photo_o': 'orange', 'upload_photo_b': 'black'}
+    step = sql.get_user_step(message.chat.id)
+    if step in colors:
+        color = colors[step]
+        for photo in message.photo:
+            fileID = photo.file_id
+            file_info = bot.get_file(fileID)
+            downloaded_file = bot.download_file(file_info.file_path)
+            path = "telegram_photos/" + fileID[:20] + '.jpg'
+            with open(path, 'wb') as new_file:
+                new_file.write(downloaded_file)
+            sql.add_new_file(message.chat.id, color, path)
+        bot.send_message(message.chat.id, 'Ваши котики успешно загружены', reply_markup=main_keyboard)
+        sql.change_step(message.chat.id, 'main_menu')
+
+
 @bot.message_handler(content_types=['text'])
 def handle_text(message):
     check_user(message.chat.id)
     user_step = sql.get_user_step(message.chat.id)
-    if message.text == 'Помощь' and user_step == 'main_menu':
-        send_welcome(message)
-        return
-    if message.text == 'Выбор котика' and user_step == 'main_menu':
-        sql.change_step(message.chat.id, 'cat_choice_menu')
-        bot.send_message(message.chat.id, 'Выберите котика', reply_markup=cat_choice_keyboard)
-        return
-    if message.text == 'Белый кот ⚪️' and user_step == 'cat_choice_menu':
-        send_cat(message, 'white_cat')
-        return
-    if message.text == 'Рыжий кот 🟠' and user_step == 'cat_choice_menu':
-        send_cat(message, 'orange_cat')
-        return
-    if message.text == 'Поменять имя' and user_step == 'main_menu':
-        sql.change_step(message.chat.id, 'change_name')
-        bot.send_message(message.chat.id, 'Введите ваше новое имя',
-                         reply_markup=any_cat_keyboard)
-        return
-    if user_step == 'change_name':
-        sql.change_name(message.chat.id, message.text)
-        bot.send_message(message.chat.id, 'Ваше имя успешно изменено',
-                         reply_markup=main_keyboard)
-        sql.change_step(message.chat.id, 'main_menu')
-        return
-    if message.text == 'Черный кот 🔳' and user_step == 'cat_choice_menu':
-        send_cat(message, 'black_cat')
-        return
-    if message.text == 'Любой котик' and user_step == 'main_menu':
-        sql.change_step(message.chat.id, 'any_cat_menu')
-        bot.send_message(message.chat.id, 'Введите количество котиков, которое вы хотите получить',
-                         reply_markup=any_cat_keyboard)
-        return
-    if message.text == 'Назад ↩️' and (user_step in ('cat_choice_menu', 'any_cat_menu')):
-        sql.change_step(message.chat.id, 'main_menu')
-        bot.send_message(message.chat.id, 'Вы вернулись в главное меню', reply_markup=main_keyboard)
-        return
-    if user_step == 'any_cat_menu':
-        user_input = message.text
-        if not user_input.isnumeric():
-            bot.send_message(message.chat.id, 'Это не число, попробуйте ещё раз',
+
+    if user_step == 'main_menu':
+        match message.text:
+            case 'Помощь':
+                send_welcome(message)
+                return
+            case 'Поменять имя':
+                sql.change_step(message.chat.id, 'change_name')
+                bot.send_message(message.chat.id, 'Введите ваше новое имя',
+                             reply_markup=any_cat_keyboard)
+                return
+            case 'Добавить фото':
+                sql.change_step(message.chat.id, 'upload_step')
+                bot.send_message(message.chat.id, 'Выберите цвет кота, которого вы хотите добавить',
+                             reply_markup=cat_choice_keyboard)
+                return
+            case 'Выбор котика':
+                sql.change_step(message.chat.id, 'cat_choice_menu')
+                bot.send_message(message.chat.id, 'Выберите котика', reply_markup=cat_choice_keyboard)
+                return
+            case 'Любой котик':
+                sql.change_step(message.chat.id, 'any_cat_menu')
+                bot.send_message(message.chat.id, 'Введите количество котиков, которое вы хотите получить',
+                                 reply_markup=any_cat_keyboard)
+                return
+
+    if user_step == 'cat_choice_menu':
+        match message.text:
+            case 'Белый кот ⚪️':
+                send_cat(message, 'white_cat')
+                return
+            case 'Рыжий кот 🟠':
+                send_cat(message, 'orange_cat')
+                return
+            case 'Черный кот 🔳':
+                send_cat(message, 'black_cat')
+                return
+
+    match message.text:
+        case 'Белый кот ⚪️' | 'Рыжий кот 🟠' | 'Черный кот 🔳':
+            steps = {'Белый кот ⚪️': 'upload_photo_w', 'Рыжий кот 🟠': 'upload_photo_o', 'Черный кот 🔳': 'upload_photo_b'}
+            sql.change_step(message.chat.id, steps[message.text])
+            bot.send_message(message.chat.id, 'Ждём фотографию от вас.',
                              reply_markup=any_cat_keyboard)
             return
-        number = int(user_input)
-        if number > 10 or number <= 0:
-            bot.send_message(message.chat.id, 'Количество запрашиваемых котиков не должно превышать 10',
-                             reply_markup=any_cat_keyboard)
+
+    if user_step in ('cat_choice_menu', 'any_cat_menu', 'upload_photo_b', 'upload_photo_o', 'upload_photo_w'):
+        match message.text:
+            case 'Назад ↩️':
+                sql.change_step(message.chat.id, 'main_menu')
+                bot.send_message(message.chat.id, 'Вы вернулись в главное меню', reply_markup=main_keyboard)
+                return
+
+    match user_step:
+        case 'change_name':
+            sql.change_name(message.chat.id, message.text)
+            bot.send_message(message.chat.id, 'Ваше имя успешно изменено',
+                             reply_markup=main_keyboard)
+            sql.change_step(message.chat.id, 'main_menu')
             return
+        case 'any_cat_menu':
+            user_input = message.text
+            if not user_input.isnumeric():
+                bot.send_message(message.chat.id, 'Это не число, попробуйте ещё раз',
+                                 reply_markup=any_cat_keyboard)
+                return
+            number = int(user_input)
+            if number > 10 or number <= 0:
+                bot.send_message(message.chat.id, 'Количество запрашиваемых котиков не должно превышать 10',
+                                 reply_markup=any_cat_keyboard)
+                return
 
-        pictures = []
-        folders = ['orange_cats', 'black_cats', 'white_cats']
-        for folder in folders:
-            files = os.listdir('images/' + folder)
-            for file in files:
-                pictures.append('images/' + folder + '/' + file)
+            pictures = []
+            folders = ['orange_cats', 'black_cats', 'white_cats']
+            for folder in folders:
+                files = os.listdir('images/' + folder)
+                for file in files:
+                    pictures.append('images/' + folder + '/' + file)
 
-        pictures_to_send = []
+            pictures_to_send = []
 
-        for i in range(number):
-            random_index = random.randint(1, len(pictures)) - 1
-            pictures_to_send.append(pictures[random_index])
-            pictures.pop(random_index)
+            for i in range(number):
+                random_index = random.randint(1, len(pictures)) - 1
+                pictures_to_send.append(pictures[random_index])
+                pictures.pop(random_index)
 
-        photos = []
+            photos = []
 
-        for pic in pictures_to_send:
-            photos.append(telebot.types.InputMediaPhoto(open(pic, 'rb')))
+            for pic in pictures_to_send:
+                photos.append(telebot.types.InputMediaPhoto(open(pic, 'rb')))
 
-        bot.send_media_group(message.chat.id, photos)
-        bot.send_message(message.chat.id, 'Вот ваши котики', reply_markup=main_keyboard)
-        sql.change_step(message.chat.id, 'main_menu')
-        return
+            bot.send_media_group(message.chat.id, photos)
+            bot.send_message(message.chat.id, 'Вот ваши котики', reply_markup=main_keyboard)
+            sql.change_step(message.chat.id, 'main_menu')
+            return
 
     bot.send_message(message.chat.id, 'Я вас не понял, попробуйте ещё раз', reply_markup=keyboards[user_step])
 
