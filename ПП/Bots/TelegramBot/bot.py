@@ -45,10 +45,13 @@ def generate_keyboards():
 
 def send_cat(message, cat_color):
     sql.change_step(message.chat.id, 'cat_choice_menu')
-    directories = {'white_cat': 'images/white_cats', 'orange_cat': 'images/orange_cats', 'black_cat': 'images/black_cats'}
-    file_name = get_random_file(directories[cat_color])
-    bot.send_photo(message.chat.id, photo=open(directories[cat_color] + '/' + file_name, 'rb'),
-                   reply_markup=cat_choice_keyboard)
+    colors = {'white_cat': 'white', 'orange_cat': 'orange', 'black_cat': 'black'}
+    file_name_list = sql.get_photos(1, colors[cat_color])
+    # photos = []
+    # for file_name in file_name_list:
+    #     photos.append(telebot.types.InputMediaPhoto(open(cfg.photos_folder + file_name[0], 'rb')))
+
+    bot.send_photo(message.chat.id, photo=open(cfg.photos_folder + file_name_list[0][0], 'rb'))
 
 
 def get_random_file(directory):
@@ -88,14 +91,14 @@ def handle_image(message):
     step = sql.get_user_step(message.chat.id)
     if step in colors:
         color = colors[step]
-        for photo in message.photo:
-            fileID = photo.file_id
-            file_info = bot.get_file(fileID)
-            downloaded_file = bot.download_file(file_info.file_path)
-            path = "telegram_photos/" + fileID[:20] + '.jpg'
-            with open(path, 'wb') as new_file:
-                new_file.write(downloaded_file)
-            sql.add_new_file(message.chat.id, color, path)
+        photo = message.photo[-1]
+        fileID = photo.file_id
+        file_info = bot.get_file(fileID)
+        downloaded_file = bot.download_file(file_info.file_path)
+        path = cfg.photos_folder + fileID + '.jpg'
+        with open(path, 'wb') as new_file:
+            new_file.write(downloaded_file)
+        sql.add_new_filo(message.chat.id, color, fileID + '.jpg')
         bot.send_message(message.chat.id, 'Ваши котики успешно загружены', reply_markup=main_keyboard)
         sql.change_step(message.chat.id, 'main_menu')
 
@@ -176,24 +179,10 @@ def handle_text(message):
                                  reply_markup=any_cat_keyboard)
                 return
 
-            pictures = []
-            folders = ['orange_cats', 'black_cats', 'white_cats']
-            for folder in folders:
-                files = os.listdir('images/' + folder)
-                for file in files:
-                    pictures.append('images/' + folder + '/' + file)
-
-            pictures_to_send = []
-
-            for i in range(number):
-                random_index = random.randint(1, len(pictures)) - 1
-                pictures_to_send.append(pictures[random_index])
-                pictures.pop(random_index)
-
+            file_name_list = sql.get_photos(number)
             photos = []
-
-            for pic in pictures_to_send:
-                photos.append(telebot.types.InputMediaPhoto(open(pic, 'rb')))
+            for file_name in file_name_list:
+                photos.append(telebot.types.InputMediaPhoto(open(cfg.photos_folder + file_name[0], 'rb')))
 
             bot.send_media_group(message.chat.id, photos)
             bot.send_message(message.chat.id, 'Вот ваши котики', reply_markup=main_keyboard)

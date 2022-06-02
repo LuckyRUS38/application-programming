@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Котики</title>
+</head>
+<body>
+    <style>
+        td{
+            border: 1px solid black;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        img{
+            height: 300px;
+            max-width: 600px;
+        }
+        .firstColumn{
+            width: 600px;
+        }
+        .secondColumn{
+            width: 100px;
+        }
+        .thirdColumn{
+            width: 100px;
+        }
+
+    </style>
+    <div>
+        <h1>{{title}}</h1>
+        <div class="pictures">
+            <table>
+                {{table|safe}}
+            </table>
+        </div>
+    </div>
+</body>
+</html>

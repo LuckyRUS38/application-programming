@@ -74,8 +74,8 @@ def send_welcome(message):
 @bot.message_handler(content_types=['location'])
 def handle_location(message):
     check_user(message.chat.id)
-    url = 'http://api.openweathermap.org/data/2.5/forecast/daily?lat=%s&lon=%s&appid=%s&mode=%s&lang=%s&units=%s&cnt=%s'
-    urlForDecode = 'http://api.openweathermap.org/geo/1.0/reverse?lat=%s&lon=%s&limit=5&appid=%s'
+    url = 'https://api.openweathermap.org/data/2.5/forecast/daily?lat=%s&lon=%s&appid=%s&mode=%s&lang=%s&units=%s&cnt=%s'
+    urlForDecode = 'https://api.openweathermap.org/geo/1.0/reverse?lat=%s&lon=%s&limit=5&appid=%s'
     lat = message.location.latitude
     lon = message.location.longitude
     addressDecode = urlForDecode % (lat, lon, cfg.API_KEY)

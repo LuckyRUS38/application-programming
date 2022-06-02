@@ -94,39 +94,3 @@ def change_units_system(telegram_id, units):
         cur.execute(sql)
         con.commit()
 
-
-# SQL  TABLE  PICTURES
-
-
-def add_new_file(telegram_id, color, path):
-    con = get_con()
-    sql = "INSERT INTO `pictures`(`owner`, `color`, `path`)" \
-          " VALUES('%s', '%s', '%s');" % (telegram_id, color, path)
-    with con:
-        cur = con.cursor()
-        cur.execute(sql)
-        con.commit()
-
-
-def get_photos(qty, color=''):
-    con = get_con()
-    if color == '':
-        sql = "SELECT `path` FROM `pictures` LIMIT %s;" \
-              % qty
-    else:
-        sql = "SELECT `path` FROM `pictures` WHERE `color` = '%s' LIMIT %s;" \
-              % (color, qty)
-    photos = []
-    photo_to_send = []
-    with con:
-        cur = con.cursor()
-        cur.execute(sql)
-        photos = cur.fetchall()
-
-    while qty > 0 or len(photos) > 0:
-        random_index = random.randint(0, len(photos) - 1)
-        photo_to_send.append(photos[random_index])
-        photos.pop(random_index)
-
-    return photo_to_send
-
