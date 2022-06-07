@@ -252,5 +252,5 @@ cython_debug/
 #.idea/
 
 # End of https://www.toptal.com/developers/gitignore/api/pycharm+all,python
-/ПП/Bots/TelegramBot/config.py
-/ПП/Bots/OpenWeatherBot/cfg.py
+/ПП/ОсиВС/Bots/TelegramBot/config.py
+/ПП/ОсиВС/Bots/OpenWeatherBot/cfg.py
