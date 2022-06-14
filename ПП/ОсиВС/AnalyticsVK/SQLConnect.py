@@ -30,7 +30,7 @@ def add_new_friends(friend_list):
         cur = con.cursor()
         cur.execute(sql)
 
-
+//
 def add_new_links(links_list):
     sql = "INSERT INTO `links`(`vk_id1`, `vk_id2`) VALUES "
 
