@@ -1,7 +1,7 @@
 import time
 import vk_api
 
-vk_session = vk_api.VkApi(token='9aea6a728c90f96975a95f941bd4ca253417f3075564df88f3b71f9ed5984ee72ab61f515ab292d2837a1')
+vk_session = vk_api.VkApi(token='732431c2059a1e95c704562fd0b576ae218c11e0276da609c2d2afeb26f7baefc1457ef5a5f201218385c')
 vk = vk_session.get_api()
 
 people = set()
