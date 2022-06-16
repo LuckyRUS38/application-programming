@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body{
+    font-family: 'Gentium Plus', serif;
+    background: #c2d20a;
+}
+
+img{
+    width: 450px;
+    height: 253px;
+}
+
+img:hover{
+    border: 5px red solid;
+}
+
+p{
+    font-size: 20px;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+td{
+    font: 16px italic;
+    font-weight: 700;
+    border: 2px solid black;
+    text-decoration: underline red;
+}

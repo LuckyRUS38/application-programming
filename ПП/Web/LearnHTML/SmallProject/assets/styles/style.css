@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body{
+    font-family: 'Gentium Plus', serif;
+}
+
+.champion-container{
+    border-radius: 30px;
+}
+
+.title{
+    height: 25px;
+    width: 400px;
+    background-color: cadetblue;
+}
+
+td{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 10px;
+    height: 30px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+.table-header{
+    height: 40px;
+    background-color: cadetblue;
+}
+
+th{
+    font: 12px italic gray;
+    font-weight: 100;
+}
+
+.table-results{
+    width: 400px;
+    background: whitesmoke;
+}
+
+table td:nth-child(1){
+
+}
+
+table td:nth-child(2){
+    width: 350px;
+}
+
+table td:nth-child(3){
+
+}
