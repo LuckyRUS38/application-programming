@@ -4,13 +4,10 @@ body{
     font-family: 'Gentium Plus', serif;
 }
 
-.champion-container{
-    border-radius: 30px;
-}
-
 .title{
     height: 25px;
     width: 400px;
+    text-align: center;
     background-color: cadetblue;
 }
 
@@ -23,22 +20,16 @@ td{
     border-bottom: 1px solid gray;
 }
 
-table{
-    border-collapse: collapse;
-}
-
 .table-header{
     height: 40px;
-    background-color: cadetblue;
-}
-
-th{
-    font: 12px italic gray;
     font-weight: 100;
+    font: 12px italic gray;
+    background-color: cadetblue;
 }
 
 .table-results{
     width: 400px;
+    border-collapse: collapse;
     background: whitesmoke;
 }
 
