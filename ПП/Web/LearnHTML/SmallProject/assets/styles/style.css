@@ -1,46 +1,70 @@
-@import url('https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 body{
-    font-family: 'Gentium Plus', serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .title{
-    height: 25px;
-    width: 400px;
-    text-align: center;
-    background-color: cadetblue;
+    background: #5274ec;
+    height: 40px;
+    color: white;
+    font-size: 20px;
+    line-height: 40px;
+    padding-left: 10px;
+    font-weight: 500;
 }
 
-td{
-    font-size: 20px;
-    font-weight: bold;
+.table-champions{
+    background-image: url(../images/skiers.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-collapse: collapse;
+}
+
+.table-champions th{
+    height: 30px;
+    background: #e7e6e6;
+    font-size: 12px;
+    font-weight: 300;
+    color: #696969;
+}
+
+.table-champions td{
+    font-size: 18px;
     padding: 0 10px;
     height: 30px;
-    border-top: 1px solid gray;
-    border-bottom: 1px solid gray;
+    background-color: #fff;
+    opacity: 0.8;
+    border-top: 1px #d7d7d7 solid;
+    border-bottom: 1px #d7d7d7 solid;
 }
 
-.table-header{
-    height: 40px;
-    font-weight: 100;
-    font: 12px italic gray;
-    background-color: cadetblue;
-}
-
-.table-results{
-    width: 400px;
-    border-collapse: collapse;
-    background: whitesmoke;
-}
-
-table td:nth-child(1){
+.table-champions td:nth-child(1){
 
 }
 
-table td:nth-child(2){
-    width: 350px;
+.table-champions td:nth-child(2){
+    width: 300px;
+    cursor: pointer;
 }
 
-table td:nth-child(3){
+.table-champions td:nth-child(3){
+    font-weight: 500;
+}
 
+.table-champions td:nth-child(2):hover .country{
+    display: inline;
+}
+
+.champions-container{
+    width: 405px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.country{
+    font-size: 13px;
+    color: gray;
+    margin-left: 10px;
+    display: none;
 }
