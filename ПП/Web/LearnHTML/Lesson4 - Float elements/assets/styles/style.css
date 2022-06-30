@@ -86,8 +86,8 @@ body{
 }
 
 .second_section{
-    height: 300px;
-    background-color: #FFFDF7;
+    height: 235px;
+    background-color: #efefef;
 }
 
 .second_section .card{
@@ -115,12 +115,19 @@ body{
 }
 
 .third_section{
-    height: 900px;
+    height: 300px;
     background-color: #FFFDF7;
 }
 
 .third_section .rate{
-    height: 500px;
+    height: 250px;
+    margin-top: 75px;
+}
+
+.third_section .rate .header_rate:after{
+    content: "";
+    display: block;
+    clear: both;
 }
 
 .third_section .rate .header_rate .big_text{
@@ -137,4 +144,103 @@ body{
     font-size: 20px;
     float: right;
     cursor: pointer;
+}
+
+.third_section .rate .container_rate .avatar{
+    float: left;
+    height: 135px;
+}
+
+.third_section .rate .container_rate{
+    margin-top: 40px;
+    float: left;
+    width: 100%;
+}
+
+.third_section .rate .container_rate .text_rate{
+    float: left;
+    width: 650px;
+    font-size: 16px;
+    margin-left: 45px;
+}
+
+.third_section .rate .container_rate .text_rate .text_rate_text{
+    margin-top: 27px;
+}
+
+.third_section .rate .container_rate .contact_him{
+    float: left;
+    margin-left: 20px;
+}
+
+.third_section .rate .container_rate .contact_him .name{
+    width: 50px;
+    font-size: 22px;
+    font-weight: 650;
+}
+
+.third_section .rate .container_rate .contact_him .other_info{
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.third_section .rate .container_rate .text_rate .header_text_rate{
+    text-transform: uppercase;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.fourth_section{
+    height: 450px;
+    background-color: #efefef;
+}
+
+.fourth_section .feedback .header{
+    padding-top: 75px;
+}
+
+.fourth_section .feedback .header .big_text{
+    font-size: 40px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.fourth_section .feedback .container_feedback{
+    margin-top: 50px;
+}
+
+.fourth_section .feedback .container_feedback .forms{
+    width: 500px;
+    float: left;
+}
+
+.fourth_section .feedback .container_feedback .form-feedback input{
+    width: 300px;
+    display: block;
+    height: 30px;
+    font-weight: 450;
+    font-size: 14px;
+    float: left;
+}
+
+.fourth_section .feedback .container_feedback .interesting{
+    float: right;
+    width: 300px;
+}
+
+.fourth_section .feedback .container_feedback .interesting .big_text{
+    font-size: 20px;
+    font-weight: 650;
+    text-transform: uppercase;
+}
+
+.fourth_section .feedback .container_feedback .interesting .small_text{
+    font-weight: 350;
+}
+
+.text-form{
+    width: 100px;
+    float: left;
+    text-align: right;
 }
