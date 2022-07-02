@@ -192,7 +192,7 @@ body{
 }
 
 .fourth_section{
-    height: 450px;
+    height: 550px;
     background-color: #efefef;
 }
 
@@ -217,7 +217,6 @@ body{
 
 .fourth_section .feedback .container_feedback .form-feedback input{
     width: 300px;
-    display: block;
     height: 30px;
     font-weight: 450;
     font-size: 14px;
@@ -243,4 +242,18 @@ body{
     width: 100px;
     float: left;
     text-align: right;
+}
+
+.fourth_section .feedback .container_feedback .form__feedback__all{
+    float: left;
+    padding-top: 15px;
+}
+
+.fifth_section{
+    height: 400px;
+    background-color: #1f2022;
+}
+
+.fourth_section .feedback .container_feedback .forms .inputQQ{
+    height: 100px;
 }
