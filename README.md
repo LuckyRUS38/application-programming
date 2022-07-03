@@ -5,7 +5,7 @@ Copyright all rights reserved
 
 # Задача на Feature/H1
 
-* Доделать всю домашнюю работу
+* Доделать всю домашнюю работу по HTML
 
 # Связь со мной
 **Telegram https://t.me/xproject_ru 
