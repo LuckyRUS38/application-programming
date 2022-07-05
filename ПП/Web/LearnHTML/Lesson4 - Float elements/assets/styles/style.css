@@ -215,11 +215,15 @@ body{
     float: left;
 }
 
-.fourth_section .feedback .container_feedback .form-feedback input{
+.fourth_section .feedback .container_feedback .form-feedback input[type=text]{
     width: 300px;
     height: 30px;
     font-weight: 450;
     font-size: 14px;
+    float: left;
+}
+
+.fourth_section .feedback .container_feedback .form-feedback .question_text{
     float: left;
 }
 
@@ -249,8 +253,12 @@ body{
     padding-top: 15px;
 }
 
-.fourth_section .feedback .container_feedback .forms .inputQQ{
-    height: 100px;
+.fourth_section .feedback .container_feedback .form-feedback input[type=radio]{
+    width: 50px;
+    height: 30px;
+    font-weight: 450;
+    font-size: 14px;
+    float: left;
 }
 
 .fifth_section{
@@ -293,7 +301,7 @@ body{
     float: left;
 }
 
-.fifth_section .container-right .button{
+.fifth_section .container-right .button {
     margin-left: 40px;
     margin-top: 30px;
     cursor: pointer;
@@ -317,4 +325,15 @@ body{
     cursor: pointer;
     margin-top: 35px;
     height: 35px;
+}
+
+textarea{
+    height: 100px;
+    width: 300px;
+    resize: none;
+}
+
+span{
+    line-height: 35px;
+    float: left;
 }
