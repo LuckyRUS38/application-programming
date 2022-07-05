@@ -1,6 +1,8 @@
 # Программирование на C++, C#, python
 Решаю задачи, делаю домашнюю и многое другое в этом репозитории.
 
+* DEVELOP
+
 Copyright all rights reserved
 
 # Задача на Feature/H1
