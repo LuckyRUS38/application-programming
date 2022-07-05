@@ -9,10 +9,6 @@
 | feature/H1 |     Доделать всю домашнюю работу по HTML       | :white_check_mark: |
 | feature/H2     |     Доделать магазин на Grid       | :x: |
 
-# Задача на Feature/H1
-
-* Доделать всю домашнюю работу по HTML
-
 # Связь со мной
 **Telegram https://t.me/xproject_ru 
 VK https://vk.com/luckyrus38
