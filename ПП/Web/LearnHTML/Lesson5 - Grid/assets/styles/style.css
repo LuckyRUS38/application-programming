@@ -2,16 +2,16 @@
 
 body{
     margin: 0;
+    font-family: 'Rubik', sans-serif;
     background: #ffd239;
-    font-family: Rubik, sans-serif;
 }
 
 .grid-box{
     position: relative;
-    justify-content: center;
     display: grid;
-    grid-template-columns: 300px repeat(3, 300px);
+    grid-template-columns: auto repeat(4, 300px) auto;
     grid-gap: 50px;
+    justify-content: center;
     margin: 0 auto;
 }
 
@@ -19,9 +19,11 @@ body{
     display: grid;
     grid-template-columns: 100px 180px 150px 220px 180px;
     height: 100px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     background: #fcc339;
     grid-column-start: 1;
-    grid-column-end: 5;
+    grid-column-end: 7;
     grid-row-start: 1;
     grid-row-end: 2;
 }
@@ -39,66 +41,4 @@ body{
 
 .header .first{
     margin-left: 100px;
-}
-
-.filter{
-    height: 530px;
-    border: 2px green solid;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 6;
-
-.sort{
-    height: 75px;
-    border: 2px blue solid;
-    grid-column-start: 2;
-    grid-column-end: 5;
-    line-height: 75px;
-    font-weight: bold;
-    text-align: center;
-}
-
-.good-card{
-    background: #FFF;
-    border-radius: 10px;
-    box-shadow: 0 7px 16px 2px rgba(34, 60, 80, 0.2);
-    overflow: hidden;
-}
-
-.good_card .photo{
-    width: 300px;
-    height: 275px;
-    top: 0;
-    left: 0;
-}
-
-.secondary-photo{
-    display: none;
-}
-
-.photo-box{
-    cursor: pointer;
-    height: 275px;
-}
-
-.photo-box:hover .primary-photo{
-    display: none;
-}
-
-.photo-box:hover .secondary-photo{
-    display: block;
-}
-
-.filter h3{
-    font-weight: 500;
-    font-size: 16px;
-    margin: 10px 0;
-}
-
-.filter .select{
-    width: 200px;
-    font-size: 16px;
-    outline: none;
-    height: 24px;
 }

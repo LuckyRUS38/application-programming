@@ -1,0 +1,37 @@
+.filter{
+    height: 500px;
+    grid-row-start: 2;
+    grid-row-end: 6;
+    border-radius: 10px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    background: #fcc339;
+    padding: 15px;
+}
+
+.filter h3{
+    font-weight: 500;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.filter select{
+    display: block;
+    width: 205px;
+    font-size: 16px;
+    outline: none;
+    height: 24px;
+    margin-bottom: 10px;
+}
+
+.filter .stock{
+    display: block;
+}
+
+.filter .stock input[type=checkbox]{
+    margin-left: 0;
+}
+
+.filter .stock{
+    margin: 2px 0;
+}
