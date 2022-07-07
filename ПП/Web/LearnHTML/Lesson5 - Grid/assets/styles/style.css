@@ -10,7 +10,7 @@ body{
     position: relative;
     justify-content: center;
     display: grid;
-    grid-template-columns: 300px repeat(3, 300px) auto auto;
+    grid-template-columns: 300px repeat(3, 300px);
     grid-gap: 50px;
     margin: 0 auto;
 }
@@ -21,7 +21,7 @@ body{
     height: 100px;
     background: #fcc339;
     grid-column-start: 1;
-    grid-column-end: 7;
+    grid-column-end: 5;
     grid-row-start: 1;
     grid-row-end: 2;
 }
@@ -48,16 +48,12 @@ body{
     grid-column-end: 2;
     grid-row-start: 2;
     grid-row-end: 6;
-    line-height: 500px;
-    font-weight: bold;
-    text-align: center;
-}
 
 .sort{
     height: 75px;
     border: 2px blue solid;
     grid-column-start: 2;
-    grid-column-end: 7;
+    grid-column-end: 5;
     line-height: 75px;
     font-weight: bold;
     text-align: center;
@@ -94,40 +90,15 @@ body{
     display: block;
 }
 
-.good-card .description{
-    font-size: 14px;
-    font-weight: 300;
-    height: 30px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.good-card .rate .star{
-    font-size: 25px;
-    color: #fcc339;
-}
-
-.good-card .rate .rate-num{
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 25px;
-}
-
-.good-card .price{
-    margin-top: 10px;
-    margin-left: 7px;
-    font-weight: 550;
-    font-size: 24px;
-    line-height: 24px;
-    float: left;
-}
-
-.good-card .status{
-    margin-top: 13px;
-    margin-right: 7px;
-    color: #de0000;
-    font-weight: 550;
+.filter h3{
+    font-weight: 500;
     font-size: 16px;
-    line-height: 16px;
-    float: right;
+    margin: 10px 0;
+}
+
+.filter .select{
+    width: 200px;
+    font-size: 16px;
+    outline: none;
+    height: 24px;
 }
