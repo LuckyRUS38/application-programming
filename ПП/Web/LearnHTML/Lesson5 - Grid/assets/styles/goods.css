@@ -1,0 +1,73 @@
+.good_card{
+    background: #FFFFFF;
+    padding-bottom: 5px;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 415px;
+}
+
+
+
+.good_card .description{
+    font-size: 16px;
+    font-weight: 400;
+    height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 5px;
+}
+
+.good_card .rate{
+    font-size: 14px;
+    font-weight: 300;
+    margin: 5px;
+}
+
+.good_card .rate .star{
+    color: #de0000;
+}
+
+.price{
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 24px;
+    padding-left: 5px;
+}
+
+.good_card .photo{
+    width: 300px;
+    height: 300px;
+    top: 0px;
+    left: 0px;
+}
+
+.secondary_photo{
+    display: none;
+}
+
+.photo_box{
+    height: 300px;
+}
+
+.photo_box:hover .primary_photo{
+    display: none;
+}
+
+.photo_box:hover .secondary_photo{
+    display: block;
+}
+
+.good_card:nth-child(3n+1){
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+.good_card:nth-child(3n+2){
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+
+.good_card:nth-child(3n+3){
+    grid-column-start: 5;
+    grid-column-end: 6;
+}

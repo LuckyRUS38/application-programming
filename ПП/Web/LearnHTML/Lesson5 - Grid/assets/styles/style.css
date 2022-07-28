@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body{
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+    background: #ffd239;
+}
+
+.grid-box{
+    position: relative;
+    display: grid;
+    grid-template-columns: auto repeat(4, 300px) auto;
+    grid-gap: 50px;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.header{
+    display: grid;
+    grid-template-columns: 100px 180px 150px 220px 180px;
+    height: 100px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: #fcc339;
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.header .logo{
+    height: 100px;
+}
+
+.header .button{
+    color: #fff;
+    cursor: pointer;
+    line-height: 100px;
+    margin-left: 50px;
+}
+
+.header .first{
+    margin-left: 100px;
+}
