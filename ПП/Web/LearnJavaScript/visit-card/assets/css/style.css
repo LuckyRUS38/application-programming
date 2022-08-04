@@ -1,0 +1,85 @@
+body{
+    background: #efefef;
+}
+
+.container{
+    margin-left: 50px;
+    display: grid;
+    grid-template-columns: 250px 600px;
+    grid-column-gap: 200px;
+    background: #efefef;
+}
+
+input{
+    display: block;
+    margin-bottom: 20px;
+    width: 255px;
+    height: 24px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #AAAAAABF;
+    border-radius: 2px;
+    opacity: 1;
+}
+
+.button{
+    background: rgb(0, 50, 255);
+    text-align: center;
+    border-radius: 20px;
+    color: white;
+    height: 40px;
+    width: 150px;
+    line-height: 40px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.visit_container{
+    width: 400px;
+    height: 250px;
+    border: 1px solid black;
+    background: white;
+    margin-top: 30px;
+}
+
+#organization_text{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 40px;
+}
+
+#name_text{
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+#position_text{
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.other_information{
+    margin-top: 15px;
+}
+
+#telephone_text{
+    margin-right: 30px;
+    text-align: right;
+    font-size: 14px;
+}
+
+#email_text{
+    text-align: right;
+    margin-right: 30px;
+    font-size: 14px;
+}
+
+#address_text{
+    text-align: right;
+    margin-right: 30px;
+    font-size: 14px;
+}
