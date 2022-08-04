@@ -5,14 +5,22 @@ body{
 .container{
     margin-left: 50px;
     display: grid;
-    grid-template-columns: 250px 600px;
+    grid-template-columns: 250px repeat(2, 100px) 600px;
     grid-column-gap: 200px;
     background: #efefef;
 }
 
+.inputs{
+    width: 400px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: auto auto;
+    border: 1px solid black;
+    background: #FFF;
+}
+
 input{
     display: block;
-    margin-bottom: 20px;
     width: 255px;
     height: 24px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -35,7 +43,8 @@ input{
 
 .visit_container{
     width: 400px;
-    height: 250px;
+    height: 350px;
+    grid-column-start: 4;
     border: 1px solid black;
     background: white;
     margin-top: 30px;
@@ -72,6 +81,22 @@ input{
     font-size: 14px;
 }
 
+#telephone_dop_text{
+    margin-right: 30px;
+    text-align: right;
+    font-size: 14px;
+}
+
+#telephone_dop{
+    margin-right: 30px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.hidden{
+    display: none !important;
+}
+
 #email_text{
     text-align: right;
     margin-right: 30px;
@@ -82,4 +107,50 @@ input{
     text-align: right;
     margin-right: 30px;
     font-size: 14px;
+}
+
+.add_icon{
+    cursor: pointer;
+}
+
+#apply{
+    margin-left: 20px;
+}
+
+.note{
+    margin-bottom: 20px;
+    margin-left: 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    grid-row-gap: 5px;
+    grid-column-start: 1;
+}
+
+.option{
+    width: 105px;
+    margin-top: 33px;
+    margin-left: 15px;
+    height: 30px;
+    border: #b9b9b9 solid 1px;
+}
+
+.align_buttons{
+    cursor: pointer;
+    width: 33px;
+    border: #b9b9b9 solid 1px;
+    float: left;
+}
+
+.align_buttons img{
+    margin-left: 7px;
+}
+
+.pressed{
+    background-color: #cecece;
+}
+
+#name_align{
+    grid-column-start: 2;
+    grid-row-start: 2;
 }
