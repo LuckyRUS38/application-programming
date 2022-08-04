@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/main.js"></script>
-    <title>Generator visit-cards</title>
+    <title>Генератор визитных карточек</title>
 </head>
 <body>
     <div class="container">
@@ -53,36 +53,42 @@
                 <input type="text" id="address" value="Иркутск, ул. Ширямова, 13Б, оф.23">
             </div>
 
-            <div class="option" id="name_align">
-                <div id="left_align_name_btn" class="left align_buttons">
-                    <img src="assets/images/left.svg" alt="left align">
+            <div class="options">
+                <div class="option" id="name_align">
+                    <div id="left_align_name_btn" class="left align_buttons">
+                        <img src="assets/images/left.svg" alt="left align">
+                    </div>
+                    <div id="center_align_name_btn" class="center align_buttons pressed">
+                        <img src="assets/images/center.svg" alt="center align">
+                    </div>
+                    <div id="right_align_name_btn" class="right align_buttons">
+                        <img src="assets/images/right.svg" alt="right align">
+                    </div>
                 </div>
-                <div id="center_align_name_btn" class="center align_buttons pressed">
-                    <img src="assets/images/center.svg" alt="center align">
+
+                <div class="option" id="name_size">
+                    <div id="name_size_24" class="24 name_size">24px</div>
+                    <div id="name_size_26" class="26 name_size pressed">26px</div>
+                    <div id="name_size_28" class="28 name_size">28px</div>
                 </div>
-                <div id="right_align_name_btn" class="right align_buttons">
-                    <img src="assets/images/right.svg" alt="right align">
-                </div>
+
+<!--                <div class="option" id="position_align"></div>-->
             </div>
 
-            <div id="apply" class="button">
-                Применить
-            </div>
+            <div id="apply" class="button">Применить</div>
         </div>
 
 
 
         <div class="visit_container" id="visit_card">
-            <div id="organization_text">
-                ОАО ИркутскНИИхиммаш
-            </div>
-            <div id="name_text">Кузнецов Артемий Кириллович</div>
-            <div id="position_text">Системный Администратор</div>
+            <div id="organization_text"></div>
+            <div id="name_text"></div>
+            <div id="position_text"></div>
             <div class="other_information">
                 <div id="telephone_text">1</div>
-                <div id="telephone_dop_text" class="hidden">+7 (800) 45-89-63</div>
-                <div id="email_text">1</div>
-                <div id="address_text">1</div>
+                <div id="telephone_dop_text" class="hidden"></div>
+                <div id="email_text"></div>
+                <div id="address_text"></div>
             </div>
         </div>
 

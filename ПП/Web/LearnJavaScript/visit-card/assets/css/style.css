@@ -6,15 +6,15 @@ body{
     margin-left: 50px;
     display: grid;
     grid-template-columns: 250px repeat(2, 100px) 600px;
-    grid-column-gap: 200px;
+    grid-column-gap: 100px;
     background: #efefef;
 }
 
 .inputs{
-    width: 400px;
-    height: 600px;
+    width: 600px;
+    height: 700px;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto ;
     border: 1px solid black;
     background: #FFF;
 }
@@ -39,11 +39,12 @@ input{
     line-height: 40px;
     user-select: none;
     cursor: pointer;
+    grid-column-start: 1;
 }
 
 .visit_container{
-    width: 400px;
-    height: 350px;
+    width: 445px;
+    height: 270px;
     grid-column-start: 4;
     border: 1px solid black;
     background: white;
@@ -122,16 +123,15 @@ input{
     margin-left: 20px;
     display: grid;
     grid-template-columns: auto auto;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto auto;
     grid-row-gap: 5px;
     grid-column-start: 1;
 }
 
 .option{
     width: 105px;
-    margin-top: 33px;
     margin-left: 15px;
-    height: 30px;
+    height: 20px;
     border: #b9b9b9 solid 1px;
 }
 
@@ -153,4 +153,30 @@ input{
 #name_align{
     grid-column-start: 2;
     grid-row-start: 2;
+}
+
+.options{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-row-start: 2;
+    grid-column-start: 3;
+}
+
+#name_size{
+    grid-column-start: 3;
+    grid-row-start: 2;
+}
+
+.name_size{
+    cursor: pointer;
+    width: 33px;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    border: #b9b9b9 solid 1px;
+    float: left;
+}
+
+#name_text{
+    font-size: 26px;
 }

@@ -20,6 +20,9 @@ let telephone_dop_input;
 let right_align_name_btn;
 let left_align_name_btn;
 let center_aling_name_btn;
+let name_size_24;
+let name_size_26;
+let name_size_28;
 
 function apply_pressed(){
     organization_text.innerText = organization_input.value;
@@ -70,6 +73,30 @@ function alignNameHandler(action){
     }
 }
 
+function nameSizeHandler(action){
+    name_size_24.classList.remove('pressed');
+    name_size_26.classList.remove('pressed');
+    name_size_28.classList.remove('pressed');
+
+    if (action.target.localName === 'img'){
+        action.target.parentElement.classList.add('pressed');
+        clas = action.target.parentElement.classList;
+    }
+    else{
+        action.target.classList.add('pressed');
+        clas = action.target.classList;
+    }
+    if(clas.contains('24')){
+        name_text.style.fontSize = '24px';
+    }
+    if(clas.contains('26')){
+        name_text.style.fontSize = '26px';
+    }
+    if(clas.contains('28')){
+        name_text.style.fontSize = '28px';
+    }
+}
+
 function getElements(){
     button = document.getElementById('apply');
     organization_input = document.getElementById('organization');
@@ -92,6 +119,9 @@ function getElements(){
     right_align_name_btn = document.getElementById('right_align_name_btn');
     left_align_name_btn = document.getElementById('left_align_name_btn');
     center_aling_name_btn = document.getElementById('center_align_name_btn');
+    name_size_26 = document.getElementById('name_size_26');
+    name_size_24 = document.getElementById('name_size_24');
+    name_size_28 = document.getElementById('name_size_28');
 }
 
 function init() {
@@ -102,6 +132,9 @@ function init() {
     right_align_name_btn.addEventListener('click', alignNameHandler);
     center_aling_name_btn.addEventListener('click', alignNameHandler);
     left_align_name_btn.addEventListener('click', alignNameHandler);
+    name_size_24.addEventListener('click', nameSizeHandler);
+    name_size_26.addEventListener('click', nameSizeHandler);
+    name_size_28.addEventListener('click', nameSizeHandler);
     apply_pressed();
 }
 
