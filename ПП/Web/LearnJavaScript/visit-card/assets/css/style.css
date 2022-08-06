@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 body{
     background: #efefef;
 }
@@ -23,7 +25,7 @@ input{
     display: block;
     width: 255px;
     height: 24px;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
+    background: #FFFFFF 0 0 no-repeat padding-box;
     border: 1px solid #AAAAAABF;
     border-radius: 2px;
     opacity: 1;
