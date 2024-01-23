@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/main.js"></script>
+    <title>Генератор визитных карточек</title>
+</head>
+<body>
+    <div class="container">
+        <div class="inputs">
+            <div class="note">
+                <div class="description">Название организации</div>
+                <div></div>
+                <label><input type="text" id="organization" value="ПАО Баброфлот"></label>
+            </div>
+            <div class="note">
+                <div class="description">Фамилия, имя, отчество</div>
+                <div></div>
+                <label><input type="text" id="name" value="Сергеев Алексей Владимирович"></label>
+            </div>
+            <div class="note">
+                <div class="description">Должность</div>
+                <div></div>
+                <label><input type="text" id="position" value="Пилот-инструктор"></label>
+            </div>
+            <div class="note">
+                <div class="description">Телефон</div>
+                <div></div>
+                <label><input type="text" id="telephone" value="+7 (3952) 45-89-63"></label>
+                <div></div>
+                <div id="additional_phone_btn" class="add_phone">
+                    <img src="assets/images/add.svg" alt="add icon" id="add-icon">
+                    Добавить ещё один телефон
+                </div>
+            </div>
+            <div class="note hidden" id="additional_phone">
+                <div class="description">Дополнительный телефон</div>
+                <div></div>
+                <label><input type="text" id="telephone_dop" value="+7 (800) 45-89-63"></label>
+                <div id="remove_additional_phone_btn" class="add_phone">
+                    <img src="assets/images/minus.svg" alt="remove icon">
+                </div>
+            </div>
+            <div class="note">
+                <div class="description">E-mail</div>
+                <div></div>
+                <label><input type="text" id="email" value="instructor@babroflot.ru"></label>
+            </div>
+            <div class="note">
+                <div class="description">Адрес</div>
+                <div></div>
+                <label><input type="text" id="address" value="Иркутск, ул. Ширямова, 13Б, оф.23"></label>
+            </div>
+            <!--Настройки-->
+            <div class="options">
+                <div class="option" id="name_align">
+                    <div id="left_align_name_btn" class="left align_buttons">
+                        <img src="assets/images/left.svg" alt="left align">
+                    </div>
+                    <div id="center_align_name_btn" class="center align_buttons pressed">
+                        <img src="assets/images/center.svg" alt="center align">
+                    </div>
+                    <div id="right_align_name_btn" class="right align_buttons">
+                        <img src="assets/images/right.svg" alt="right align">
+                    </div>
+                </div>
+
+                <div class="option" id="name_size">
+                    <div id="name_size_24" class="24 name_size">24px</div>
+                    <div id="name_size_26" class="26 name_size pressed">26px</div>
+                    <div id="name_size_28" class="28 name_size">28px</div>
+                </div>
+            </div>
+            <div id="apply" class="button">Применить</div>
+        </div>
+
+        <div class="visit_container" id="visit_card">
+            <div id="organization_text"></div>
+            <div id="name_text"></div>
+            <div id="position_text"></div>
+            <div class="other_information">
+                <div id="telephone_text">1</div>
+                <div id="telephone_dop_text" class="hidden"></div>
+                <div id="email_text"></div>
+                <div id="address_text"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

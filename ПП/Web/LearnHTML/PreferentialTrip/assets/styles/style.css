@@ -39,3 +39,13 @@ body{
     position: relative;
     height: 30px;
 }
+
+.button{
+    margin-top: 30px;
+    line-height: 50px;
+    cursor: pointer;
+    text-align: center;
+    background: linear-gradient(240deg, rgba(135,234,0,1) 0%, rgba(54,218,130,1) 100%);
+    width: 200px;
+    height: 50px;
+}

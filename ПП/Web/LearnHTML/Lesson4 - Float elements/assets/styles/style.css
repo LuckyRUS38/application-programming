@@ -6,6 +6,11 @@ body{
     font-family: Rubik, sans-serif;
 }
 
+.logo{
+    height: 100px;
+    float: left;
+}
+
 .section{
     padding: 0 360px;
 }
@@ -35,11 +40,6 @@ body{
     user-select: none;
     line-height: 100px;
     margin: 0 30px;
-}
-
-.first_section .head_nav .logo{
-    height: 100px;
-    float: left;
 }
 
 .first_section .middle{
@@ -192,7 +192,7 @@ body{
 }
 
 .fourth_section{
-    height: 450px;
+    height: 550px;
     background-color: #efefef;
 }
 
@@ -215,12 +215,15 @@ body{
     float: left;
 }
 
-.fourth_section .feedback .container_feedback .form-feedback input{
+.fourth_section .feedback .container_feedback .form-feedback input[type=text]{
     width: 300px;
-    display: block;
     height: 30px;
     font-weight: 450;
     font-size: 14px;
+    float: left;
+}
+
+.fourth_section .feedback .container_feedback .form-feedback .question_text{
     float: left;
 }
 
@@ -243,4 +246,94 @@ body{
     width: 100px;
     float: left;
     text-align: right;
+}
+
+.fourth_section .feedback .container_feedback .form__feedback__all{
+    float: left;
+    padding-top: 15px;
+}
+
+.fourth_section .feedback .container_feedback .form-feedback input[type=radio]{
+    width: 50px;
+    height: 30px;
+    font-weight: 450;
+    font-size: 14px;
+    float: left;
+}
+
+.fifth_section{
+    height: 350px;
+    background-color: #1f2022;
+}
+
+.fifth_section .contact-information{
+    margin-top: 40px;
+    width: 200px;
+    float: left;
+}
+
+.fifth_section .contact-information .text{
+    margin-top: 45px;
+    float: left;
+}
+
+.fifth_section .contact-information .text .small-text{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.fifth_section .container-right{
+    margin-top: 75px;
+    width: 600px;
+    float: right;
+}
+
+.fifth_section .container-right .button-white{
+    margin-left: 40px;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+    float: left;
+}
+
+.fifth_section .container-right .other-buttons{
+    float: left;
+}
+
+.fifth_section .container-right .button {
+    margin-left: 40px;
+    margin-top: 30px;
+    cursor: pointer;
+    text-align: center;
+    color: #b29231;
+    float: left;
+}
+
+.fifth_section .container-right .social .small-text{
+    float: left;
+    color:  #fff;
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: 45px;
+    margin-left: 40px;
+}
+
+.social-img{
+    float: right;
+    margin-left: 10px;
+    cursor: pointer;
+    margin-top: 35px;
+    height: 35px;
+}
+
+textarea{
+    height: 100px;
+    width: 300px;
+    resize: none;
+}
+
+span{
+    line-height: 35px;
+    float: left;
 }

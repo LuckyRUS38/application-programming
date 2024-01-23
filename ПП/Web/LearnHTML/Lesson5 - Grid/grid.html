@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/goods.css">
+    <link rel="stylesheet" href="assets/styles/filter.css">
+    <link rel="stylesheet" href="assets/styles/sort.css">
+    <link rel="icon" href="assets/images/logo-icon.png">
+    <title>BITHouse - Всё для счастья майнера</title>
+</head>
+<body>
+<div class="grid-box">
+    <div class="header">
+        <img src="assets/images/logo.png" alt="" class="logo">
+        <div class="button first">Магазины</div>
+        <div class="button">Покупателям</div>
+        <div class="button">Юридическим лицам</div>
+        <div class="button">Клуб BITHouse</div>
+    </div>
+    <div class="filter">
+        <h3>Наличие в магазинах</h3>
+        <label>
+            <select>
+                <option selected>В любом из 5 магазинов</option>
+                <option>ТЦ Элитлайн</option>
+                <option>ТЦ Снегирь</option>
+                <option>НБУ Распутина</option>
+                <option>ТЦ Новая Дача</option>
+                <option>ТЦ Европарк</option>
+            </select>
+        </label>
+
+        <label class="stock"><input type="checkbox">В наличии</label>
+        <label class="stock"><input type="checkbox">Под заказ: сегодня</label>
+        <label class="stock"><input type="checkbox">Под заказ: завтра</label>
+        <label class="stock"><input type="checkbox">Под заказ: позже</label>
+        <label class="stock"><input type="checkbox">Отсутствующие в продаже</label>
+        <br>
+        <h3>Категории</h3>
+        <label class="stock"><input type="checkbox">Видеокарты</label>
+        <label class="stock"><input type="checkbox">Бэкплэйты для видеокарт</label>
+        <label class="stock"><input type="checkbox">Асики</label>
+        <label class="stock"><input type="checkbox">Персональные компьютеры</label>
+        <label class="stock"><input type="checkbox">Водоблоки</label>
+        <hr>
+        <label class="stock"><input type="checkbox">Надежные модели</label>
+        <label class="stock"><input type="checkbox">Рейтинг 4 и выше</label>
+        <label class="stock"><input type="checkbox">Есть обзор</label>
+        <hr>
+        <h3>Производитель</h3>
+        <label><input class="search" placeholder="Поиск"></label>
+        <label class="stock"><input type="checkbox">ASUS</label>
+        <label class="stock"><input type="checkbox">Gigabyte</label>
+        <label class="stock"><input type="checkbox">MSI</label>
+        <label class="stock"><input type="checkbox">Palit</label>
+        <label class="stock"><input type="checkbox">Colorful</label>
+        <label class="stock"><input type="checkbox">EVGA</label>
+        <label class="stock"><input type="checkbox">Alienware</label>
+        <label class="stock"><input type="checkbox">AORUS</label>
+        <label class="stock"><input type="checkbox">Acer</label>
+        <label class="stock"><input type="checkbox">HP</label>
+        <label class="stock"><input type="checkbox">HyperPC</label>
+        <label class="stock"><input type="checkbox">KFA2</label>
+        <label class="stock"><input type="checkbox">nVidia</label>
+        <label class="stock"><input type="checkbox">Lenovo</label>
+        <label class="stock"><input type="checkbox">PNY</label>
+
+    </div>
+    <div class="sort">
+        <div class="special">
+            <div class="special-good">Видеокарты</div>
+            <div class="special-good">Водоблоки</div>
+            <div class="special-good">Асики</div>
+            <div class="special-good">Материнские платы</div>
+            <div class="more-special-goods">Показать ещё</div>
+        </div>
+        <hr>
+        <div class="sorting">
+            <label for="sort-sorter">Сортировать:
+                <select class="sort-select" id="sort-sorter">
+                    <option value="" selected>Сначала популярные</option>
+                    <option value="">Сначала недорогие</option>
+                    <option value="">Сначала дорогие</option>
+                </select>
+            </label>
+        </div>
+    </div>
+
+    <div class="good_card">
+        <div class="photo_box">
+            <img class="photo primary_photo" src="assets/images/goods/3070/1-1.jpg">
+            <img class="photo secondary_photo" src="assets/images/goods/3070/1-2.jpg">
+        </div>
+        <div class="description">
+            Видеокарта GIGABYTE GeForce RTX 3070 Ti GAMING OC
+        </div>
+        <div class="rate">
+            <span class="star">&#9733;</span>
+            4.7  | 591 отзывов
+        </div>
+        <div class="price">
+            81 499 ₽
+        </div>
+    </div>
+
+    <div class="good_card">
+        <div class="photo_box">
+            <img class="photo primary_photo" src="assets/images/goods/3080/3-1.jpg">
+            <img class="photo secondary_photo" src="assets/images/goods/3080/3-2.jpg">
+        </div>
+        <div class="description">
+            Видеокарта GIGABYTE GeForce RTX 3080 Ti GAMING OC
+        </div>
+        <div class="rate">
+            <span class="star">&#9733;</span>
+            4.9 | 199 отзывов
+        </div>
+        <div class="price">
+            126 999 ₽
+        </div>
+    </div>
+
+    <div class="good_card">
+        <div class="photo_box">
+            <img class="photo primary_photo" src="assets/images/goods/3080/2-1.jpg">
+            <img class="photo secondary_photo" src="assets/images/goods/3080/2-2.jpg">
+        </div>
+        <div class="description">
+            Видеокарта Palit GeForce RTX 3080 GamingPro (LHR)
+        </div>
+        <div class="rate">
+            <span class="star">&#9733;</span>
+            5.0  | 102 отзывов
+        </div>
+        <div class="price">
+            119 331 ₽
+        </div>
+    </div>
+
+    <div class="good_card">
+        <div class="photo_box">
+            <img class="photo primary_photo" src="assets/images/goods/3080/4-1.jpg">
+            <img class="photo secondary_photo" src="assets/images/goods/3080/4-2.jpg">
+        </div>
+        <div class="description">
+            Видеокарта KFA2 GeForce RTX 3080 Ti SG
+        </div>
+        <div class="rate">
+            <span class="star">&#9733;</span>
+            4.4 | 101 отзывов
+        </div>
+        <div class="price">
+            111 999 ₽
+        </div>
+    </div>
+
+    <div class="good_card">
+        <div class="photo_box">
+            <img class="photo primary_photo" src="assets/images/goods/3080/5-1.jpg">
+            <img class="photo secondary_photo" src="assets/images/goods/3080/5-2.jpg">
+        </div>
+        <div class="description">
+            Видеокарта Palit GeForce RTX 3080 Ti GamingPro
+        </div>
+        <div class="rate">
+            <span class="star">&#9733;</span>
+            4.7  | 78 отзывов
+        </div>
+        <div class="price">
+            124 999 ₽
+        </div>
+    </div>
+</div>
+</body>
+</html>
